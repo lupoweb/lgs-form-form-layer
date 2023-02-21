@@ -1,0 +1,26 @@
+ <header id="header_top_mobile"> 
+  <nav class="navbar navbar-mobile">
+    <button class="layer-nav-btn layer-open-btn navbar-brand">
+      <div class="card-profile">
+        <%= image_tag 'logo.png', class: 'card-image card-mobile'%>
+      </div>
+    </button>
+    <div class="layer-nav layer-nav-black", style="max-width: 260px, z-index: 1100, position: absolute">
+      <div class="layer-nav layer-nav-black2">
+        <div class="layer-nav layer-nav-black1">
+          
+          <button class="layer-nav-btn layer-close-btn"><i class="fas fa-times"></i></button>
+          
+          <ul id="sidebar" class="layer-list">
+            <li><%= link_to root_path, class: "list-group-item collapsed #{controller.controller_name == 'dashboard' ? 'active' : ''}", title: 'Home', "data-toggle" => "tooltip", "data-placement"=>"right"  do%> Home <% end%></li>
+            <li><%= link_to 'Account', edit_user_path(current_user), class: "list-group-item list-group-item-bottom2 collapsed #{controller.controller_name == 'users' ? 'active' : ''}" , title: 'Account', "data-toggle" => "tooltip", "data-placement"=>"right"  %></li>
+            <li><%= link_to(destroy_user_session_path, method: :delete, class: 'list-group-item collapsed list-group-item-bottom') do %> 
+              Esci
+              <% end %>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>

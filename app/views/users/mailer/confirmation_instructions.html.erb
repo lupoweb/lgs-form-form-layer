@@ -1,0 +1,33 @@
+<div class="body-mailer div-mailer">
+  <center>
+    <div class="email-container div-mailer div-mailer-second">
+      <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin: auto;">
+        <tr>
+          <td valign="top" class="bg-black" style="padding: 1em 2.5em;">
+            <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+              <tr>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td class="hero bg-white">
+            <div class="overlay div-mailer"></div>
+            <table>
+              <tr>
+                <td>
+                  <div class="text div-mailer div-mailer-body">
+                    <h2>Benvenuto <%= @email %>!</h2>
+
+          					<p>Conferma il tuo account email</p>
+          					<p><%= link_to 'Conferma il mio account', confirmation_url(@resource, confirmation_token: @token), class: 'btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2' %></p>
+                  </div>
+                </td>
+              </tr>
+            </table>
+            </td>
+        </tr>
+      </table>
+    </div>
+  </center>
+</div>

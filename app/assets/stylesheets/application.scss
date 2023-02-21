@@ -1,0 +1,233 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require alert
+ *= require_self
+ */
+
+@import "bootstrap";
+
+html,
+body {
+  background: #497099;
+  color: #ffffff;
+  line-height: 26px;
+  font-weight: 300;
+  overflow-x: hidden !important;
+  -webkit-font-smoothing:antialiased;
+  height: 100%;
+  font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+
+.form-control {
+  position: relative;
+  width: 100%;
+  margin: 0 0 10px;
+  padding: 16px 25px;
+  font-size: 17px;
+  line-height: 20px;
+  font-weight: inherit;
+  color: #fff !important;
+  background-color: rgba(255, 255, 255, .05);
+  border: 1px solid transparent;
+  border-radius: 0;
+  outline: 0;
+  -webkit-appearance: none;
+  cursor: text;
+  box-sizing: border-box;
+  -webkit-transition: border-color .2s ease-in-out;
+  -moz-transition: border-color .2s ease-in-out;
+  transition:border-color .2s ease-in-out
+}
+
+.form-control:focus {
+  color: #495057;
+  background-color:rgba(255, 255, 255, .05);
+  border-color: rgba(255, 255, 255, .05) !important;
+  outline: 0;
+  box-shadow: 0
+}
+
+.form-control::placeholder {
+  color: lightgrey;
+}
+
+.btn {
+  border-radius: 0 !important;
+}
+
+a {
+  color: lightblue;
+}
+
+a:visited {
+  color: lightblue;
+}
+
+:root {
+  --input-padding-x: 1.5rem;
+  --input-padding-y: 0.95rem;
+}
+
+.login,
+.image {
+  min-height: 100vh;
+}
+
+.login_image{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 500px;
+  max-height: 375px;
+  position: absolute;
+  bottom: 50px;
+  left: 0;
+  right: 0;
+
+}
+
+.btn {
+  border-radius: 0;
+}
+
+.bg-image {
+  background-image: url('login/login2.png');
+  background-size: cover;
+  background-position: center;
+}
+
+@media screen and (max-device-width:999px){
+  .bg-image{
+    background-image: url('login/login_mobile.png');
+    min-height: 280px;
+    margin-left: 5px;
+  }
+  .login_image{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 300px;
+    max-height: 150px;
+    position: absolute;
+    bottom: 50px;
+    left: 0;
+    right: 0;
+
+  }
+}
+
+@media screen and (min-device-width:1000px) and (max-device-width:1040px){
+  .bg-image{
+    background-image: url('login/login_mobile.png');
+    background-size: cover;
+    background-position: center;
+    min-height: 590px;
+    margin-left: 5px;
+    margin-bottom: -150px;
+  }
+
+  .login_image{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 300px;
+    max-height: 150px;
+    position: absolute;
+    bottom: 50px;
+    left: 0;
+    right: 0;
+
+  }
+
+}
+.login-heading {
+  font-weight: 300;
+  color: #ffffff;
+}
+
+.btn-login, 
+.btn-signup {
+  margin-top: 20px;
+  background: #1a8852;
+  border-color: #1a8852;
+  font-size: 0.9rem;
+  letter-spacing: 0.05rem;
+  padding: 0.75rem 1rem;
+  border-radius: 0;
+}
+
+.btn-reset {
+  margin-top: 20px;
+  background: lightcoral;
+  border-color: lightcoral;
+  font-size: 0.9rem;
+  letter-spacing: 0.05rem;
+  padding: 0.75rem 1rem;
+  border-radius: 0;
+}
+
+.btn-reset:hover {
+  background: #ffffff;
+  color: lightcoral;
+}
+
+.btn-login:hover, 
+.btn-signup:hover {
+  background: #ffffff;
+  color: #1a8852;
+}
+
+.form-label-group {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.field_with_errors {
+  padding: 2px;
+  background-color: #262528;
+  display: block;
+}
+
+.form-label-group>input,
+.form-label-group>label,
+.field_with_errors>input {
+  padding: var(--input-padding-y) var(--input-padding-x);
+  height: auto;
+  border-radius: 0;
+  color: #ffffff;
+}
+
+/* Fallback for Edge
+-------------------------------------------------- */
+
+@supports (-ms-ime-align: auto) {
+  .form-label-group>label {
+    display: none;
+  }
+  .form-label-group input::-ms-input-placeholder {
+    color: #ffffff;
+  }
+}
+
+/* Fallback for IE
+-------------------------------------------------- */
+
+@media all and (-ms-high-contrast: none),
+(-ms-high-contrast: active) {
+  .form-label-group>label {
+    display: none;
+  }
+  .form-label-group input:-ms-input-placeholder {
+    color: #ffffff;
+  }
+}

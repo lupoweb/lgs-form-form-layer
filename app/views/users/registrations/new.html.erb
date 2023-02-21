@@ -1,0 +1,46 @@
+<div class="container-fluid">
+  <div class="row no-gutter">
+
+  </div>
+  <div class="row no-gutter"> 
+    <div class="col-md-12" style="margin-top: -20px">
+      <div class="login d-flex align-items-center py-5">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-9 col-lg-8 mx-auto">
+              <h3 class="login-heading mb-4">Ciao! Registrati.</h3>
+              <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+                <%= devise_error_messages! %>
+                <div class="form-label-group">
+                  <%= f.text_field :first_name, autofocus: true, autocomplete: "email", class: 'form-control', id: 'inputEmail', required: true, placeholder: 'Nome' %>
+                </div>
+                <div class="form-label-group">
+                  <%= f.text_field :last_name, class: 'form-control', id: 'inputEmail', required: true, placeholder: 'Cognome' %>
+                </div>
+                <div class="form-label-group">
+                  <%= f.email_field :email, autocomplete: "email", class: 'form-control', id: 'inputEmail', required: true, placeholder: 'Email' %>
+                </div>
+
+                <div class="form-label-group">
+                  <%= f.password_field :password, autocomplete: "new-password", required: true, class: 'form-control', placeholder: 'Password' %>
+                </div>
+
+                <div class="form-label-group">
+                  <%= f.text_field :key, class: 'form-control', required: true, placeholder: 'Codice di Registrazione' %>
+                </div>
+       
+                <%= f.submit "Registrati", class: 'btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2' %>  
+                <div class="text-center">
+                  <%- if controller_name != 'sessions' %>
+                    Possiedi già un account? <%= link_to "Entra", new_session_path(resource_name) %><br />
+                  <% end %>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

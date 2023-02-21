@@ -1,0 +1,57 @@
+<div class="container">
+  <div class="section-box">
+    <div class="jumbotron">
+      <h2 class="display-4"><%= current_user.name %></h2>          
+      <hr class="my-4">
+    </div>
+      <div>
+        <div class="row">
+          <div class="col-sm-12">
+            <%= user_flash_messages!(@user) %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="card" id="tab1" >
+              <div class="card-body">
+                <%= form_for(@user) do |f| %>
+
+                  <div class="form-group">
+                    <%= f.text_field :first_name, class: 'form-control', placeholder: 'Nome'%>
+                  </div>
+                  <div class="form-group">
+                    <%= f.text_field :last_name, class: 'form-control', placeholder: 'Cognome'%>
+                  </div>
+                  <div class="form-group">
+                    <%= f.email_field :email, class: 'form-control', placeholder: 'new-email@example.com'%>
+
+                  </div>
+                  <%= f.submit "Aggiorna Utente", class: 'btn btn-lg btn-secondary btn-block btn-login text-uppercase font-weight-bold mb-2'%>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col">
+            <div class="card">
+              <div class="card-body">
+                <%= form_for(@user) do |f| %>
+                  <div class="form-group">
+                    <%= f.password_field :password, class: 'form-control', placeholder: 'Nuova Password', id: 'password', required: true%>
+                  </div>
+
+                  <%= f.submit "Aggiorna Password", class: 'btn btn-lg btn-danger btn-block btn-login text-uppercase font-weight-bold mb-2', disabled: false, id: 'submit_password' %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
+
+
+
+  
