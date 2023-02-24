@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Tipo Mediazione:</strong>
+  <%= @mediation.mediation_type %>
+</p>
+
+<p>
+  <strong>Numero di Protocollo:</strong>
+  <%= @mediation.protocol_number %>
+</p>
+
+<%= link_to 'Edit', edit_user_mediation_path(@mediation) %> |
+<%= link_to 'Back', user_mediations_path %>

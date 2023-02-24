@@ -5,6 +5,7 @@
 
     <div class="list-group panel">
         <%= link_to root_path, class: "list-group-item collapsed #{controller.controller_name == 'dashboard' ? 'active' : ''}", title: 'Home', "data-toggle" => "tooltip", "data-placement"=>"right"  do%> Home <% end%>
+        <%= link_to user_mediations_path(current_user), class: "list-group-item collapsed #{controller.controller_name == 'mediations' ? 'active' : ''}", title: 'Mediations', "data-toggle" => "tooltip", "data-placement"=>"right"  do%> Mediazioni <% end%>
 
         <%= link_to 'Account', edit_user_path(current_user), class: "list-group-item list-group-item-bottom2 collapsed #{controller.controller_name == 'users' ? 'active' : ''}" , title: 'Account', "data-toggle" => "tooltip", "data-placement"=>"right"  %>
         <%= link_to(destroy_user_session_path, method: :delete, class: 'list-group-item collapsed list-group-item-bottom') do %> 
